@@ -1,3 +1,4 @@
+language: generic 
 sudo: required
 services: 
   - docker
@@ -6,5 +7,5 @@ before install:
   - docker build -t jonny321/frontend -f Dockerfile.dev .
 
 script:
-  - docker run jonny321/frontend npm run test -- --coverage
+  - - docker run -e CI=true USERNAME/docker-react npm run test
 
