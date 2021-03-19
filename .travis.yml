@@ -7,7 +7,7 @@ services:
 before install: 
   - docker build -t jonny321/frontend -f Dockerfile.dev .
 
-script:
+before script:
   - docker run -e CI=true jonny321/frontend npm run test
 
 deploy:
